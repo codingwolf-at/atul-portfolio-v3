@@ -41,7 +41,7 @@ export function Footer() {
 
           <div className="text-center md:text-right">
             <p className="text-muted-foreground flex items-center justify-center md:justify-end">
-              Made with <Heart className="w-4 h-4 mx-1 text-red-500" /> by Alex
+              Made with <Heart className="w-4 h-4 mx-1 text-red-500" /> by Atul
             </p>
             <p className="text-sm text-muted-foreground mt-1">
               © {currentYear} All rights reserved
