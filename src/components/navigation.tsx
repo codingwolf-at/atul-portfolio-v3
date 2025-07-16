@@ -36,9 +36,14 @@ export function Navigation() {
             href="#hero" 
             className="text-xl font-bold gradient-text hover:scale-105 transition-smooth"
           >
-            AT
+            <img
+              src="/logo.png"
+              alt="Logo"
+              width={50}
+              height={50}
+              className="object-contain h-10 w-10 rounded-full"
+            />
           </a>
-          {/* TODO: Add a logo */}
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
