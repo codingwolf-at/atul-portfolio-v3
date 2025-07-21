@@ -214,3 +214,7 @@
     transform: translateY(-20px);
   }
 }
+
+.not-found-page {
+  background-color: #24202F;
+}
