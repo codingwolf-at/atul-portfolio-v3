@@ -10,6 +10,8 @@ const navigationItems = [
   { name: "Contact", href: "#contact" },
 ]
 
+// TODO: make it a floating navigation bar (inspired by iOS 26)
+
 export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
