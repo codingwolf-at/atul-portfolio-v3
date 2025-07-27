@@ -26,13 +26,9 @@ export function Navigation() {
   }, [])
 
   return (
-    <nav 
-      className={`fixed top-0 left-0 right-0 z-50 transition-smooth ${
-        isScrolled ? "glass-card border-b" : "bg-transparent"
-      }`}
-    >
+    <nav className="fixed top-5 left-0 right-0 z-50 transition-smooth">
       <div className="container-custom">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-16 glass-card border rounded-full px-3">
           {/* Logo */}
           <a 
             href="#hero" 
