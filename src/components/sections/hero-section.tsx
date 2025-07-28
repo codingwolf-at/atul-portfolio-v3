@@ -5,11 +5,7 @@ export function HeroSection() {
   return (
     <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden">
       {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-primary opacity-10" />
-      
-      {/* Floating elements */}
-      <div className="absolute top-20 left-10 w-20 h-20 bg-primary/20 rounded-full blur-xl animate-float" />
-      <div className="absolute bottom-20 right-10 w-32 h-32 bg-primary/10 rounded-full blur-2xl animate-float" style={{ animationDelay: '2s' }} />
+      <div className="absolute inset-0 bg-gradient-primary opacity-5" />
       
       <div className="container-custom text-center relative z-10">
         <div className="animate-fade-in">
@@ -42,32 +38,6 @@ export function HeroSection() {
             >
               View My Work
             </Button>
-          </div>
-
-          {/* Social Links */}
-          <div className="flex items-center justify-center space-x-6 mb-16 animate-slide-up" style={{ animationDelay: '0.4s' }}>
-            <a 
-              href="https://github.com" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="p-3 glass-card hover:bg-primary/10 transition-smooth hover-lift rounded-full"
-            >
-              <Github className="w-5 h-5" />
-            </a>
-            <a 
-              href="https://linkedin.com" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="p-3 glass-card hover:bg-primary/10 transition-smooth hover-lift rounded-full"
-            >
-              <Linkedin className="w-5 h-5" />
-            </a>
-            <a 
-              href="mailto:alex@example.com"
-              className="p-3 glass-card hover:bg-primary/10 transition-smooth hover-lift rounded-full"
-            >
-              <Mail className="w-5 h-5" />
-            </a>
           </div>
 
           {/* Scroll indicator */}
