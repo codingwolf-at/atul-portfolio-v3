@@ -26,6 +26,8 @@ const contactInfo = [
   }
 ];
 
+// TODO: Debug why all buttons have diff bgs
+
 export function ContactSection() {
   return (
     <section id="contact" className="py-20 relative">
@@ -44,11 +46,12 @@ export function ContactSection() {
         <div className="max-w-4xl mx-auto">
           {/* Contact Information */}
           <div className="flex justify-center gap-6 flex-wrap">
-            {contactInfo.map(({ icon, title, link }) => (
+            {contactInfo.map(({ icon, title, link }, idx) => (
               <Button
                 size="lg"
                 className="bg-gradient-primary hover:scale-105 transition-spring shadow-glow"
                 onClick={() => window.open(link)}
+                key={idx+title}
               >
                 {icon}
                 {title}
