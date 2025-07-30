@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { ThemeToggle } from "@/components/theme-toggle"
@@ -10,20 +10,9 @@ const navigationItems = [
   { name: "Contact", href: "#contact" },
 ]
 
-// TODO: make it a floating navigation bar (inspired by iOS 26)
-
 export function Navigation() {
-  const [isScrolled, setIsScrolled] = useState(false)
+
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50)
-    }
-
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
 
   return (
     <nav className="fixed top-5 left-0 right-0 z-50 transition-smooth">

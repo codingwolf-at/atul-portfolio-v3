@@ -1,4 +1,4 @@
-import { ArrowDown, Github, Linkedin, Mail } from "lucide-react"
+import { ArrowDown } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 export function HeroSection() {
@@ -26,8 +26,8 @@ export function HeroSection() {
             <Button 
               size="lg"
               className="bg-gradient-primary hover:scale-105 transition-spring shadow-glow"
+              onClick={() => window.location.href = "#contact"}
             >
-              <Mail className="w-4 h-4 mr-2" />
               Get In Touch
             </Button>
             
@@ -35,6 +35,7 @@ export function HeroSection() {
               variant="outline" 
               size="lg"
               className="glass-card hover:bg-primary/10 transition-smooth"
+              onClick={() => window.location.href = "#projects"}
             >
               View My Work
             </Button>
