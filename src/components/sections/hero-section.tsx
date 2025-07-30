@@ -2,6 +2,7 @@ import { ArrowDown } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 // TODO: do something about the bg, use something more dark, nice & aesthetic
+// TODO: add a available for hire tag
 
 export function HeroSection() {
   return (

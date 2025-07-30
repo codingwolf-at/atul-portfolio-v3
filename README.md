@@ -9,8 +9,8 @@
 - About 
 - Skills
 - Projects
-- Contact
-- Footer
+- Contact - Done
+- Footer - Done
 
 ## Project info
 
