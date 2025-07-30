@@ -8,6 +8,10 @@ import { ContactSection } from "@/components/sections/contact-section"
 import { Footer } from "@/components/footer"
 import { ScrollToTop } from "@/components/scroll-to-top"
 
+// TODO: After skills and projects you can add a certifications section
+
+// TODO: Do sanity for mobile version also
+
 const Index = () => {
   return (
     <ThemeProvider defaultTheme="dark">

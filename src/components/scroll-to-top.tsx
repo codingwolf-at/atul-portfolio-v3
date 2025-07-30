@@ -33,7 +33,7 @@ export const ScrollToTop = () => {
     return (
         <Button 
             className="fixed bottom-5 right-5 z-50 rounded-full"
-            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            onClick={() => window.location.href = "#hero"}
             size="icon"
         >
             <ArrowUp  />
