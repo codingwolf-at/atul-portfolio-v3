@@ -1,6 +1,8 @@
 import { ArrowDown } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
+// TODO: do something about the bg, use something more dark, nice & aesthetic
+
 export function HeroSection() {
   return (
     <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden">

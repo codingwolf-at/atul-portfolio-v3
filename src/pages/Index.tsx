@@ -6,6 +6,7 @@ import { SkillsSection } from "@/components/sections/skills-section"
 import { ProjectsSection } from "@/components/sections/projects-section"
 import { ContactSection } from "@/components/sections/contact-section"
 import { Footer } from "@/components/footer"
+import { ScrollToTop } from "@/components/scroll-to-top"
 
 const Index = () => {
   return (
@@ -20,6 +21,7 @@ const Index = () => {
           <ContactSection />
         </main>
         <Footer />
+        <ScrollToTop />
       </div>
     </ThemeProvider>
   );
