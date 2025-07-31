@@ -12,6 +12,8 @@ import { ScrollToTop } from "@/components/scroll-to-top"
 
 // TODO: Do sanity for mobile version also
 
+// TODO: add a common loader with fixed delay
+
 const Index = () => {
   return (
     <ThemeProvider defaultTheme="dark">
