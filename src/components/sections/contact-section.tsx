@@ -1,30 +1,7 @@
-import { Github, Linkedin, Mail, Twitter } from "lucide-react"
-import { Button } from "../ui/button"
+import { Button } from "../ui/button";
+import { contactInfo } from "@/lib/constants";
 
 // TODO: add option to download CV
-
-const contactInfo = [
-  {
-    icon: <Mail className="w-5 h-5" />,
-    title: "Email",
-    link: "mailto:atameshwari9@gmail.com"
-  },
-  {
-    icon: <Github className="w-5 h-5" />,
-    title: "Github",
-    link: "https://github.com/codingwolf-at"
-  },
-  {
-    icon: <Linkedin className="w-5 h-5" />,
-    title: "LinkedIn",
-    link: "https://www.linkedin.com/in/atul-tameshwari/"
-  },
-  {
-    icon: <Twitter className="w-5 h-5" />,
-    title: "X (formerly Twitter)",
-    link: "https://x.com/atulT09"
-  }
-];
 
 // TODO: Debug why all buttons have diff bgs
 

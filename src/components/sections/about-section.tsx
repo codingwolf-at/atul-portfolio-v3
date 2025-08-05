@@ -1,23 +1,7 @@
 import { Card } from "@/components/ui/card"
-import { Code, Palette, Zap } from "lucide-react"
+import { highlights } from "@/lib/constants";
 
-const highlights = [
-  {
-    icon: Code,
-    title: "Clean Code",
-    description: "Writing maintainable, scalable code following best practices and modern standards."
-  },
-  {
-    icon: Palette,
-    title: "UI/UX Focus",
-    description: "Creating intuitive interfaces that provide exceptional user experiences."
-  },
-  {
-    icon: Zap,
-    title: "Performance",
-    description: "Optimizing applications for speed, accessibility, and cross-browser compatibility."
-  }
-]
+// TODO: replace highlight icons with 3D ones
 
 export function AboutSection() {
   return (
