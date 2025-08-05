@@ -21,7 +21,7 @@ export function SkillsSection() {
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             <Card className="text-center transition-all hover:shadow-xl hover:shadow-primary/5 hover:scale-[1.02] hover:border-primary/20 animate-in slide-in-from-left-5 duration-700">
               <CardHeader>
-                <Code className="w-12 h-12 mx-auto mb-4 text-primary transition-transform duration-200 hover:scale-110" />
+                <img src="./code.png" alt="code" width={100} height={100} className="mx-auto" />
                 <CardTitle>Frontend Development</CardTitle>
               </CardHeader>
               <CardContent>
@@ -47,7 +47,7 @@ export function SkillsSection() {
 
             <Card className="text-center transition-all hover:shadow-xl hover:shadow-primary/5 hover:scale-[1.02] hover:border-primary/20 animate-in slide-in-from-right-5 duration-700">
               <CardHeader>
-                <Palette className="w-12 h-12 mx-auto mb-4 text-primary transition-transform duration-200 hover:scale-110" />
+                <img src="./design.png" alt="design" width={100} height={100} className="mx-auto" />
                 <CardTitle>Styling & Design</CardTitle>
               </CardHeader>
               <CardContent>
@@ -72,7 +72,7 @@ export function SkillsSection() {
           {/* Tools & Technologies */}
           <Card className="transition-all hover:shadow-xl hover:shadow-primary/5 hover:scale-[1.02] hover:border-primary/20 animate-in slide-in-from-bottom-5 duration-700">
             <CardHeader>
-              <Wrench className="w-12 h-12 mx-auto mb-4 text-primary transition-transform duration-200 hover:scale-110" />
+              <img src="./tool.png" alt="tool" width={100} height={100} className="mx-auto" />
               <CardTitle className="text-center">Tools & Technologies</CardTitle>
             </CardHeader>
             <CardContent>
