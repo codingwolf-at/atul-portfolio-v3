@@ -28,6 +28,8 @@ const contactInfo = [
 
 // TODO: Debug why all buttons have diff bgs
 
+// TODO: improve social section, it looks ugly
+
 export function ContactSection() {
   return (
     <section id="contact" className="py-20 relative">
