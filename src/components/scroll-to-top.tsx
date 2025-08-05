@@ -32,7 +32,7 @@ export const ScrollToTop = () => {
 
     return (
         <Button 
-            className="fixed bottom-5 right-5 z-50 rounded-full"
+            className="fixed bottom-5 right-5 z-50 rounded-full drop-shadow-xl hover:scale-110 transition-spring"
             onClick={() => window.location.href = "#hero"}
             size="icon"
         >
