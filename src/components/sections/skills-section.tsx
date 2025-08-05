@@ -1,40 +1,8 @@
-import { Card } from "@/components/ui/card"
-import { Progress } from "@/components/ui/progress"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import {  Code, Palette, Wrench } from "lucide-react";
+import { Badge } from "../ui/badge";
 
-const skillCategories = [
-  {
-    title: "Frontend Technologies",
-    skills: [
-      { name: "React/Next.js", level: 90 },
-      { name: "TypeScript", level: 85 },
-      { name: "JavaScript (ES6+)", level: 95 },
-      { name: "HTML5 & CSS3", level: 95 },
-    ]
-  },
-  {
-    title: "Styling & Design",
-    skills: [
-      { name: "Tailwind CSS", level: 90 },
-      { name: "Styled Components", level: 80 },
-      { name: "SASS/SCSS", level: 85 },
-      { name: "Responsive Design", level: 95 },
-    ]
-  },
-  {
-    title: "Tools & Workflow",
-    skills: [
-      { name: "Git & GitHub", level: 90 },
-      { name: "Vite/Webpack", level: 75 },
-      { name: "Testing (Jest/Vitest)", level: 70 },
-      { name: "Figma", level: 80 },
-    ]
-  }
-]
-
-const technologies = [
-  "React", "TypeScript", "Next.js", "Tailwind CSS", "Node.js", "Express", 
-  "MongoDB", "PostgreSQL", "Git", "Docker", "AWS", "Vercel", "Figma", "Jest"
-]
+// TODO: move skills to constants and use loop to render
 
 export function SkillsSection() {
   return (
@@ -49,52 +17,101 @@ export function SkillsSection() {
           </p>
         </div>
 
-        {/* Skill Categories */}
-        <div className="grid lg:grid-cols-3 gap-8 mb-16">
-          {skillCategories.map((category, categoryIndex) => (
-            <Card 
-              key={category.title}
-              className="p-6 glass-card hover:bg-primary/5 transition-smooth"
-              style={{ animationDelay: `${categoryIndex * 0.1}s` }}
-            >
-              <h3 className="text-xl font-semibold mb-6 text-center">{category.title}</h3>
-              <div className="space-y-4">
-                {category.skills.map((skill, skillIndex) => (
-                  <div key={skill.name} className="space-y-2">
-                    <div className="flex justify-between items-center">
-                      <span className="text-sm font-medium">{skill.name}</span>
-                      <span className="text-sm text-muted-foreground">{skill.level}%</span>
-                    </div>
-                    <Progress 
-                      value={skill.level} 
-                      className="h-2"
-                      style={{ 
-                        animationDelay: `${(categoryIndex * category.skills.length + skillIndex) * 0.1}s` 
-                      }}
-                    />
-                  </div>
-                ))}
-              </div>
+        <div className="max-w-4xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-8 mb-12">
+            <Card className="text-center transition-all hover:shadow-xl hover:shadow-primary/5 hover:scale-[1.02] hover:border-primary/20 animate-in slide-in-from-left-5 duration-700">
+              <CardHeader>
+                <Code className="w-12 h-12 mx-auto mb-4 text-primary transition-transform duration-200 hover:scale-110" />
+                <CardTitle>Frontend Development</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="flex flex-wrap gap-2 justify-center">
+                  <Badge variant="secondary" className="transition-all duration-200 hover:scale-105">
+                    JavaScript
+                  </Badge>
+                  <Badge variant="secondary" className="transition-all duration-200 hover:scale-105">
+                    React
+                  </Badge>
+                  <Badge variant="secondary" className="transition-all duration-200 hover:scale-105">
+                    TypeScript
+                  </Badge>
+                  <Badge variant="secondary" className="transition-all duration-200 hover:scale-105">
+                    Next.js
+                  </Badge>
+                  <Badge variant="secondary" className="transition-all duration-200 hover:scale-105">
+                    HTML5
+                  </Badge>
+                </div>
+              </CardContent>
             </Card>
-          ))}
-        </div>
 
-        {/* Technology Stack */}
-        <div className="text-center">
-          <h3 className="text-2xl font-semibold mb-8">Technology Stack</h3>
-          <div className="flex flex-wrap justify-center gap-3">
-            {technologies.map((tech, index) => (
-              <span
-                key={tech}
-                className="px-4 py-2 glass-card text-sm font-medium hover:bg-primary/10 transition-smooth hover-lift cursor-default"
-                style={{ animationDelay: `${index * 0.05}s` }}
-              >
-                {tech}
-              </span>
-            ))}
+            <Card className="text-center transition-all hover:shadow-xl hover:shadow-primary/5 hover:scale-[1.02] hover:border-primary/20 animate-in slide-in-from-right-5 duration-700">
+              <CardHeader>
+                <Palette className="w-12 h-12 mx-auto mb-4 text-primary transition-transform duration-200 hover:scale-110" />
+                <CardTitle>Styling & Design</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="flex flex-wrap gap-2 justify-center">
+                  <Badge variant="secondary" className="transition-all duration-200 hover:scale-105">
+                    CSS3
+                  </Badge>
+                  <Badge variant="secondary" className="transition-all duration-200 hover:scale-105">
+                    Tailwind CSS
+                  </Badge>
+                  <Badge variant="secondary" className="transition-all duration-200 hover:scale-105">
+                    SASS/SCSS
+                  </Badge>
+                  <Badge variant="outline" className="transition-all duration-200 hover:scale-105">
+                    Figma (Basic)
+                  </Badge>
+                </div>
+              </CardContent>
+            </Card>
           </div>
+
+          {/* Tools & Technologies */}
+          <Card className="transition-all hover:shadow-xl hover:shadow-primary/5 hover:scale-[1.02] hover:border-primary/20 animate-in slide-in-from-bottom-5 duration-700">
+            <CardHeader>
+              <Wrench className="w-12 h-12 mx-auto mb-4 text-primary transition-transform duration-200 hover:scale-110" />
+              <CardTitle className="text-center">Tools & Technologies</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="flex flex-wrap gap-2 justify-center">
+                <Badge variant="outline" className="transition-all duration-200 hover:scale-105">
+                  Git & GitHub
+                </Badge>
+                <Badge variant="outline" className="transition-all duration-200 hover:scale-105">
+                  Bitbucket
+                </Badge>
+                <Badge variant="outline" className="transition-all duration-200 hover:scale-105">
+                  Cursor
+                </Badge>
+                <Badge variant="outline" className="transition-all duration-200 hover:scale-105">
+                  VS Code
+                </Badge>
+                <Badge variant="outline" className="transition-all duration-200 hover:scale-105">
+                  npm/yarn
+                </Badge>
+                <Badge variant="outline" className="transition-all duration-200 hover:scale-105">
+                  Chrome DevTools
+                </Badge>
+                <Badge variant="outline" className="transition-all duration-200 hover:scale-105">
+                  Responsive Design
+                </Badge>
+                <Badge variant="outline" className="transition-all duration-200 hover:scale-105">
+                  REST APIs
+                </Badge>
+                <Badge variant="outline" className="transition-all duration-200 hover:scale-105">
+                  Vercel
+                </Badge>
+                <Badge variant="outline" className="transition-all duration-200 hover:scale-105">
+                  Netlify
+                </Badge>
+              </div>
+            </CardContent>
+          </Card>
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
