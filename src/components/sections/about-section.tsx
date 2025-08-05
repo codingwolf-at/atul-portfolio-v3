@@ -44,17 +44,6 @@ export function AboutSection() {
               When I'm not coding, you'll find me exploring new design trends, contributing to open-source projects, 
               or mentoring fellow developers.
             </p>
-
-            <div className="flex flex-wrap justify-center gap-3 mt-8">
-              {["React", "TypeScript", "Next.js", "Tailwind CSS", "Node.js", "Git"].map((tech) => (
-                <span 
-                  key={tech}
-                  className="px-4 py-2 glass-card text-sm font-medium hover:bg-primary/10 transition-smooth"
-                >
-                  {tech}
-                </span>
-              ))}
-            </div>
           </div>
         </div>
 
