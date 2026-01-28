@@ -16,6 +16,8 @@ import { ScrollToTop } from "@/components/scroll-to-top"
 
 // TODO: move all constants to their own files
 
+// TODO: after completion, mark previous portfolio's repo as private | delete the deployment from netlify | change links all over (each socials, linktree, etc)
+
 const Index = () => {
   return (
     <ThemeProvider defaultTheme="dark">
