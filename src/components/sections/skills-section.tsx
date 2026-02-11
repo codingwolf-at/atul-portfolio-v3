@@ -1,5 +1,4 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import {  Code, Palette, Wrench } from "lucide-react";
 import { Badge } from "../ui/badge";
 
 // TODO: move skills to constants and use loop to render

@@ -25,8 +25,7 @@ export function AboutSection() {
             
             <p className="text-lg leading-relaxed text-muted-foreground text-center">
               I'm passionate about writing clean, efficient code and staying up-to-date with the latest web technologies. 
-              When I'm not coding, you'll find me exploring new design trends, contributing to open-source projects, 
-              or mentoring fellow developers.
+              When I'm not coding, you'll find me exploring new design trends or mentoring fellow developers.
             </p>
           </div>
         </div>
@@ -40,7 +39,7 @@ export function AboutSection() {
             >
               <div className="flex items-center space-x-4 mb-4">
                 <div className="p-3 bg-gradient-primary rounded-lg shadow-glow">
-                  <highlight.icon className="w-6 h-6 text-white" />
+                  <highlight.icon className="w-6 h-6" />
                 </div>
                 <h3 className="text-xl font-semibold">{highlight.title}</h3>
               </div>
