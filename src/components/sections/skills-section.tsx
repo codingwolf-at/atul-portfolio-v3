@@ -1,8 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "../ui/badge";
 
-// TODO: move skills to constants and use loop to render
-
 export function SkillsSection() {
   return (
     <section id="skills" className="py-20 relative">

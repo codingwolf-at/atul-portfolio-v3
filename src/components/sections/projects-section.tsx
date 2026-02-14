@@ -3,8 +3,6 @@ import { Button } from "@/components/ui/button"
 import { ExternalLink, Github } from "lucide-react"
 import { projects } from "@/lib/constants"
 
-// TODO: fix projects cover img
-
 
 export function ProjectsSection() {
   const featuredProjects = projects.filter(project => project.featured)

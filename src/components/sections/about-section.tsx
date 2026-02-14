@@ -1,8 +1,6 @@
 import { Card } from "@/components/ui/card"
 import { highlights } from "@/lib/constants";
 
-// TODO: replace highlight icons with 3D ones
-
 export function AboutSection() {
   return (
     <section id="about" className="py-20 relative">
@@ -38,7 +36,7 @@ export function AboutSection() {
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="flex items-center space-x-4 mb-4">
-                <div className="p-3 bg-gradient-primary rounded-lg shadow-glow">
+                <div className="p-3 rounded-lg shadow-glow">
                   <highlight.icon className="w-6 h-6" />
                 </div>
                 <h3 className="text-xl font-semibold">{highlight.title}</h3>

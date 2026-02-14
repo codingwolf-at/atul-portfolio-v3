@@ -1,12 +1,6 @@
 import { Button } from "../ui/button";
 import { contactInfo } from "@/lib/constants";
 
-// TODO: add option to download CV
-
-// TODO: Debug why all buttons have diff bgs
-
-// TODO: improve social section, it looks ugly
-
 export function ContactSection() {
   return (
     <section id="contact" className="py-20 relative">

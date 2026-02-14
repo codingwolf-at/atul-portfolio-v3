@@ -9,14 +9,6 @@ import { ContactSection } from "@/components/sections/contact-section"
 import { ProjectsSection } from "@/components/sections/projects-section"
 import { ExperienceSection } from "@/components/sections/experience-section"
 
-// TODO: Do sanity for mobile version also
-
-// TODO: add a common loader with fixed delay
-
-// TODO: move all constants to their own files
-
-// TODO: after completion, mark previous portfolio's repo as private | delete the deployment from netlify | change links all over (each socials, linktree, etc)
-
 const Index = () => {
   return (
     <ThemeProvider defaultTheme="dark">

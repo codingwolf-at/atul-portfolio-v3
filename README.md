@@ -9,11 +9,12 @@ A modern, responsive developer portfolio built with React, TypeScript, and Tailw
 - **Interactive Sections**: 
   - Hero section with animated introduction
   - About section with personal information
+  - Experience section with work experience
   - Skills section showcasing technical expertise
   - Projects section with detailed case studies
   - Contact section for professional inquiries
 - **Smooth Navigation**: Seamless scrolling and navigation experience
-- **Performance Optimized**: Built with Vite for fast development and production builds
+- **Performance Optimized**: Built with Vite for fast development, instant HMR, and optimized production builds
 
 ## 🛠️ Technologies Used
 
@@ -39,25 +40,6 @@ While this is a personal portfolio, if you find any bugs or have suggestions for
 
 This project is open source and available under the [MIT License](LICENSE).
 
-## 📞 Contact
-
-- **Portfolio**: [Your Portfolio URL]
-- **LinkedIn**: [Your LinkedIn Profile]
-- **GitHub**: [Your GitHub Profile]
-- **Email**: [Your Email]
-
 ---
 
 Built with ❤️ using React, TypeScript, and Tailwind CSS
-
----
-
-<!-- TODO -->
-# Work in progress ⚠️
--  Navigation - Done
-- Hero - Done
-- About 
-- Skills
-- Projects
-- Contact - Done
-- Footer - Done
