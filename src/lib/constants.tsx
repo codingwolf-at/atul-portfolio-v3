@@ -82,3 +82,20 @@ export const contactInfo = [
       link: "https://x.com/atulT09"
     }
 ];
+
+export const experience = [
+  {
+    title: "Software Developer - Frontend",
+    company: "inFeedo.ai",
+    period: "June 2022 - March 2025",
+    description:
+      "Helped build and scale a shared design system, migrating the majority of UI components to improve consistency and development speed. Delivered high-impact AI-driven features for an enterprise HR SaaS platform used by hundreds of CHRO stakeholders, supporting insights from tens of millions of employee responses. Also led dashboard architecture improvements and handled production issues end to end in a fast-moving environment.",
+  },
+  {
+    title: "Frontend Intern",
+    company: "inFeedo.ai",
+    period: "March 2022 - May 2022",
+    description:
+      "Improved and modernized internal and production-facing React applications by delivering UX refinements, accessibility upgrades aligned with ARIA and WCAG standards, and migrating legacy class components to hooks during a React 19 upgrade. Strengthened platform stability by proactively resolving open-source vulnerabilities and validating fixes before release.",
+  },
+];

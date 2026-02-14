@@ -7,6 +7,7 @@ import { AboutSection } from "@/components/sections/about-section"
 import { SkillsSection } from "@/components/sections/skills-section"
 import { ContactSection } from "@/components/sections/contact-section"
 import { ProjectsSection } from "@/components/sections/projects-section"
+import { ExperienceSection } from "@/components/sections/experience-section"
 
 // TODO: Do sanity for mobile version also
 
@@ -24,6 +25,7 @@ const Index = () => {
         <main>
           <HeroSection />
           <AboutSection />
+          <ExperienceSection />
           <SkillsSection />
           <ProjectsSection />
           <ContactSection />
