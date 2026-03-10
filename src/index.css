@@ -218,3 +218,16 @@
 .not-found-page {
   background-color: #24202F;
 }
+
+/* View Transitions for Theme Toggle */
+html.theme-transition::view-transition-old(root),
+html.theme-transition::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+html.theme-transition::view-transition-old(root) {
+  z-index: 1;
+}
+html.theme-transition::view-transition-new(root) {
+  z-index: 2;
+}
