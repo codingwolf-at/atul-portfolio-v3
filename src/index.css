@@ -172,6 +172,14 @@
   .animate-float {
     animation: float 6s ease-in-out infinite;
   }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-code-float {
+    animation: code-float 15s infinite linear;
+  }
 }
 
 @layer utilities {
@@ -212,6 +220,34 @@
   }
   50% {
     transform: translateY(-20px);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes code-float {
+  0% {
+    transform: translateY(110vh) scale(0.5) rotate(-10deg);
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+    transform: translateY(85vh) scale(1) rotate(-5deg);
+  }
+  85% {
+    opacity: 1;
+    transform: translateY(-85vh) scale(1) rotate(5deg);
+  }
+  100% {
+    transform: translateY(-110vh) scale(0.5) rotate(10deg);
+    opacity: 0;
   }
 }
 
