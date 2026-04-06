@@ -1,8 +1,4 @@
-import { useEffect, useState, useRef } from "react";
-
 export function Background() {
-  const [mounted, setMounted] = useState(false);
-  const flashlightRef = useRef<HTMLDivElement>(null);
 
   // A collection of frontend/developer symbols to act as particles
   const codeSymbols = [
@@ -10,25 +6,6 @@ export function Background() {
     "React", "TS", "CSS", "/**/", "const", "let", "return", "git",
     "var", "NextJS", "console.log()"
   ];
-
-  useEffect(() => {
-    setMounted(true);
-    let animationFrameId: number;
-
-    const handleMouseMove = (e: MouseEvent) => {
-      if (flashlightRef.current) {
-        animationFrameId = requestAnimationFrame(() => {
-          flashlightRef.current!.style.transform = `translate(${e.clientX - 300}px, ${e.clientY - 300}px)`;
-        });
-      }
-    };
-
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
-      if (animationFrameId) cancelAnimationFrame(animationFrameId);
-    };
-  }, []);
 
   return (
     <div className="fixed inset-0 z-[-1] overflow-hidden bg-background pointer-events-none transition-colors duration-500">
@@ -42,7 +19,7 @@ export function Background() {
         className="absolute inset-0 z-0 overflow-visible font-mono font-bold select-none text-muted-foreground"
         aria-hidden="true" // Ensure screen readers don't read out random background text
       >
-        {mounted && [...Array(35)].map((_, i) => {
+        {[...Array(35)].map((_, i) => {
           // Semi-randomize deterministic properties based on index
           const symbol = codeSymbols[(i * 3) % codeSymbols.length];
           const sizeInfo = i % 3;
@@ -91,20 +68,6 @@ export function Background() {
           );
         })}
       </div>
-
-      {/* Light interactive radial glows at the top and bottom edges */}
-      <div className="absolute top-[-10%] left-[20%] w-[50%] h-[30%] rounded-full bg-[#9256bb]/5 blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-[-10%] right-[20%] w-[50%] h-[30%] rounded-full bg-[#06b3c5]/5 blur-[120px] pointer-events-none" />
-
-      {/* Interactive Flashlight to gently illuminate background slightly */}
-      <div
-        ref={flashlightRef}
-        className="absolute top-0 left-0 w-[600px] h-[600px] rounded-full blur-[100px] opacity-10 transition-opacity duration-300 z-10 pointer-events-none will-change-transform"
-        style={{
-          background: "radial-gradient(circle, hsl(var(--foreground)/0.1) 0%, transparent 60%)",
-          transform: "translate(-1000px, -1000px)", // Render off-screen initially
-        }}
-      />
 
       {/* Accessibility Contrast Matte Layer */}
       <div className="absolute inset-0 bg-background/50 backdrop-blur-[1px] z-20 pointer-events-none" />
