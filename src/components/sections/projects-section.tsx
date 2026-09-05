@@ -1,141 +1,103 @@
-import { Card } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { ExternalLink, Github } from "lucide-react"
-import { projects } from "@/lib/constants"
-
+import { ArrowUpRight } from "lucide-react";
+import { Reveal, SectionHeading } from "@/components/motion/reveal";
+import { projects } from "@/lib/constants";
 
 export function ProjectsSection() {
-  const featuredProjects = projects.filter(project => project.featured)
-  const otherProjects = projects.filter(project => !project.featured)
+  const featured = projects.filter((p) => p.featured);
+  const rest = projects.filter((p) => !p.featured);
 
   return (
-    <section id="projects" className="py-20 relative">
+    <section id="projects" className="py-20 sm:py-28 scroll-mt-20 border-t">
       <div className="container-custom">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Featured <span className="gradient-text">Projects</span>
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            A showcase of my recent work and contributions
-          </p>
+        <div className="flex flex-wrap items-end justify-between gap-6">
+          <SectionHeading
+            eyebrow="Selected work"
+            title={<>Proof, not promises.</>}
+            copy="Production-grade builds. Real deploys, real users, real code you can read."
+          />
+          <Reveal delay={0.1}>
+            <a href="https://github.com/codingwolf-at" target="_blank" rel="noreferrer"
+              className="inline-flex items-center gap-1.5 rounded-full border px-4 py-2 text-sm font-medium hover:bg-accent transition-colors">
+              All repos <ArrowUpRight className="h-4 w-4" />
+            </a>
+          </Reveal>
         </div>
 
-        {/* Featured Projects */}
-        <div className="grid lg:grid-cols-2 gap-8 mb-16">
-          {featuredProjects.map((project, index) => (
-            <Card 
-              key={project.title}
-              className="group overflow-hidden glass-card hover:bg-primary/5 transition-smooth"
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              <div className="aspect-video overflow-hidden">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-              </div>
-              
-              <div className="p-6">
-                <h3 className="text-xl font-semibold mb-3 group-hover:text-primary transition-smooth">
-                  {project.title}
-                </h3>
-                
-                <p className="text-muted-foreground mb-4 leading-relaxed">
-                  {project.description}
-                </p>
-                
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {project.technologies.map((tech) => (
-                    <span
-                      key={tech}
-                      className="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full"
-                    >
-                      {tech}
+        <div className="mt-10 grid lg:grid-cols-2 gap-5">
+          {featured.map((p, i) => (
+            <Reveal key={p.title} delay={i * 0.08}>
+              <article className="group h-full overflow-hidden rounded-2xl border bg-card card-hover flex flex-col">
+                <div className="relative aspect-[16/9] overflow-hidden bg-muted">
+                  {p.image ? (
+                    <img
+                      src={p.image}
+                      alt={p.title}
+                      loading="lazy"
+                      className="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.03]"
+                    />
+                  ) : (
+                    <div className="h-full w-full grid-bg" />
+                  )}
+                  <div className="absolute left-4 top-4 flex gap-2">
+                    <span className="rounded-full glass-card px-3 py-1 font-mono text-[11px] font-medium">
+                      {"status" in p ? (p as { status?: string }).status ?? "Featured" : "Featured"}
                     </span>
-                  ))}
+                  </div>
                 </div>
-                
-                <div className="flex space-x-4">
-                  <Button 
-                    size="sm" 
-                    className="bg-gradient-primary hover:scale-105 transition-spring"
-                    asChild
-                  >
-                    <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-                      <ExternalLink className="w-4 h-4 mr-2" />
-                      Live Demo
+                <div className="flex flex-1 flex-col p-6 sm:p-7">
+                  <h3 className="text-xl font-semibold tracking-tight group-hover:underline decoration-2 underline-offset-4">
+                    {p.title}
+                  </h3>
+                  <p className="mt-2.5 text-[15px] leading-relaxed text-muted-foreground flex-1">{p.description}</p>
+                  <div className="mt-4 flex flex-wrap gap-1.5">
+                    {p.technologies.map((t) => (
+                      <span key={t} className="rounded-full border px-2.5 py-1 font-mono text-[11px] text-muted-foreground">
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+                  <div className="mt-6 flex gap-2.5">
+                    <a href={p.liveUrl} target="_blank" rel="noreferrer"
+                      className="inline-flex flex-1 items-center justify-center gap-1.5 rounded-full bg-primary px-4 py-2.5 text-sm font-medium text-primary-foreground hover:opacity-90 transition-opacity">
+                      Live <ArrowUpRight className="h-4 w-4" />
                     </a>
-                  </Button>
-                  
-                  <Button 
-                    variant="outline" 
-                    size="sm"
-                    className="glass-card hover:bg-primary/10"
-                    asChild
-                  >
-                    <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                      <Github className="w-4 h-4 mr-2" />
+                    <a href={p.githubUrl} target="_blank" rel="noreferrer"
+                      className="inline-flex flex-1 items-center justify-center gap-1.5 rounded-full border px-4 py-2.5 text-sm font-medium hover:bg-accent transition-colors">
                       Code
                     </a>
-                  </Button>
+                  </div>
                 </div>
-              </div>
-            </Card>
+              </article>
+            </Reveal>
           ))}
         </div>
 
-        {/* Other Projects */}
-        <div>
-          <h3 className="text-2xl font-semibold mb-8 text-center">Other Projects</h3>
-          <div className="grid md:grid-cols-2 gap-6">
-            {otherProjects.map((project, index) => (
-              <Card 
-                key={project.title}
-                className="p-6 glass-card hover:bg-primary/5 transition-smooth hover-lift"
-                style={{ animationDelay: `${index * 0.1 + 0.4}s` }}
-              >
-                <h4 className="text-lg font-semibold mb-2">{project.title}</h4>
-                <p className="text-muted-foreground text-sm mb-4">
-                  {project.description}
-                </p>
-                
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.technologies.map((tech) => (
-                    <span
-                      key={tech}
-                      className="px-2 py-1 bg-primary/10 text-primary text-xs rounded"
-                    >
-                      {tech}
+        <div className="mt-5 grid sm:grid-cols-2 gap-5">
+          {rest.map((p, i) => (
+            <Reveal key={p.title} delay={i * 0.08}>
+              <article className="group rounded-2xl border bg-card p-6 sm:p-7 card-hover h-full">
+                <h3 className="font-semibold tracking-tight text-lg">{p.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground line-clamp-3">{p.description}</p>
+                <div className="mt-4 flex flex-wrap gap-1.5">
+                  {p.technologies.map((t) => (
+                    <span key={t} className="rounded-md bg-secondary px-2 py-1 font-mono text-[11px]">
+                      {t}
                     </span>
                   ))}
                 </div>
-                
-                <div className="flex space-x-3">
-                  <a 
-                    href={project.liveUrl} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="flex items-center text-sm text-primary hover:underline"
-                  >
-                    <ExternalLink className="w-3 h-3 mr-1" />
-                    Demo
+                <div className="mt-5 flex gap-4 text-sm font-medium">
+                  <a href={p.liveUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 hover:underline underline-offset-4">
+                    Demo <ArrowUpRight className="h-3.5 w-3.5" />
                   </a>
-                  <a 
-                    href={project.githubUrl} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="flex items-center text-sm text-muted-foreground hover:text-foreground"
-                  >
-                    <Github className="w-3 h-3 mr-1" />
-                    Code
+                  <a href={p.githubUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 text-muted-foreground hover:text-foreground">
+                    Code <ArrowUpRight className="h-3.5 w-3.5" />
                   </a>
                 </div>
-              </Card>
-            ))}
-          </div>
+              </article>
+            </Reveal>
+          ))}
         </div>
       </div>
     </section>
-  )
+  );
 }

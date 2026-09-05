@@ -1,114 +1,39 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "../ui/badge";
+import { Reveal, SectionHeading } from "@/components/motion/reveal";
+import { skillGroups } from "@/lib/constants";
 
 export function SkillsSection() {
   return (
-    <section id="skills" className="py-20 relative">
+    <section id="skills" className="py-20 sm:py-28 scroll-mt-20 border-t">
       <div className="container-custom">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Skills & <span className="gradient-text">Expertise</span>
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Technologies and tools I use to bring ideas to life
-          </p>
-        </div>
-
-        <div className="max-w-4xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
-            <Card className="text-center transition-all hover:shadow-xl hover:shadow-primary/5 hover:scale-[1.02] hover:border-primary/20 animate-in slide-in-from-left-5 duration-700">
-              <CardHeader>
-                <img src="./code.png" alt="code" width={100} height={100} className="mx-auto" />
-                <CardTitle>Frontend Development</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="flex flex-wrap gap-2 justify-center">
-                  <Badge variant="secondary" className="transition-all duration-200 hover:scale-105">
-                    JavaScript
-                  </Badge>
-                  <Badge variant="secondary" className="transition-all duration-200 hover:scale-105">
-                    React
-                  </Badge>
-                  <Badge variant="secondary" className="transition-all duration-200 hover:scale-105">
-                    TypeScript
-                  </Badge>
-                  <Badge variant="secondary" className="transition-all duration-200 hover:scale-105">
-                    Next.js
-                  </Badge>
-                  <Badge variant="secondary" className="transition-all duration-200 hover:scale-105">
-                    HTML5
-                  </Badge>
+        <SectionHeading
+          eyebrow="Stack"
+          title={<>Tools I reach for.</>}
+          copy="Opinionated, boring where it counts, modern where it matters."
+        />
+        <div className="mt-10 grid md:grid-cols-3 gap-4">
+          {skillGroups.map((g, i) => (
+            <Reveal key={g.title} delay={i * 0.08}>
+              <div className="h-full rounded-2xl border bg-card p-6 sm:p-7 card-hover">
+                <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
+                  0{i + 1}
+                </p>
+                <h3 className="mt-2 text-lg font-semibold tracking-tight">{g.title}</h3>
+                <p className="text-sm text-muted-foreground">{g.description}</p>
+                <div className="mt-5 flex flex-wrap gap-1.5">
+                  {g.skills.map((s) => (
+                    <span
+                      key={s}
+                      className="cursor-default rounded-full border px-2.5 py-1 text-xs font-medium transition-colors hover:bg-foreground hover:text-background hover:border-foreground"
+                    >
+                      {s}
+                    </span>
+                  ))}
                 </div>
-              </CardContent>
-            </Card>
-
-            <Card className="text-center transition-all hover:shadow-xl hover:shadow-primary/5 hover:scale-[1.02] hover:border-primary/20 animate-in slide-in-from-right-5 duration-700">
-              <CardHeader>
-                <img src="./design.png" alt="design" width={100} height={100} className="mx-auto" />
-                <CardTitle>Styling & Design</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="flex flex-wrap gap-2 justify-center">
-                  <Badge variant="secondary" className="transition-all duration-200 hover:scale-105">
-                    CSS3
-                  </Badge>
-                  <Badge variant="secondary" className="transition-all duration-200 hover:scale-105">
-                    Tailwind CSS
-                  </Badge>
-                  <Badge variant="secondary" className="transition-all duration-200 hover:scale-105">
-                    SASS/SCSS
-                  </Badge>
-                  <Badge variant="outline" className="transition-all duration-200 hover:scale-105">
-                    Figma (Basic)
-                  </Badge>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-
-          {/* Tools & Technologies */}
-          <Card className="transition-all hover:shadow-xl hover:shadow-primary/5 hover:scale-[1.02] hover:border-primary/20 animate-in slide-in-from-bottom-5 duration-700">
-            <CardHeader>
-              <img src="./tool.png" alt="tool" width={100} height={100} className="mx-auto" />
-              <CardTitle className="text-center">Tools & Technologies</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="flex flex-wrap gap-2 justify-center">
-                <Badge variant="outline" className="transition-all duration-200 hover:scale-105">
-                  Git & GitHub
-                </Badge>
-                <Badge variant="outline" className="transition-all duration-200 hover:scale-105">
-                  Bitbucket
-                </Badge>
-                <Badge variant="outline" className="transition-all duration-200 hover:scale-105">
-                  Cursor
-                </Badge>
-                <Badge variant="outline" className="transition-all duration-200 hover:scale-105">
-                  VS Code
-                </Badge>
-                <Badge variant="outline" className="transition-all duration-200 hover:scale-105">
-                  npm/yarn
-                </Badge>
-                <Badge variant="outline" className="transition-all duration-200 hover:scale-105">
-                  Chrome DevTools
-                </Badge>
-                <Badge variant="outline" className="transition-all duration-200 hover:scale-105">
-                  Responsive Design
-                </Badge>
-                <Badge variant="outline" className="transition-all duration-200 hover:scale-105">
-                  REST APIs
-                </Badge>
-                <Badge variant="outline" className="transition-all duration-200 hover:scale-105">
-                  Vercel
-                </Badge>
-                <Badge variant="outline" className="transition-all duration-200 hover:scale-105">
-                  Netlify
-                </Badge>
               </div>
-            </CardContent>
-          </Card>
+            </Reveal>
+          ))}
         </div>
       </div>
     </section>
   );
-};
+}
