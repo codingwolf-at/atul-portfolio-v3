@@ -2,7 +2,7 @@
 
 Personal portfolio of **Atul Tameshwari**, Software Development Engineer (Frontend) at Plane. Light-minimal, motion-rich, built with React, TypeScript, Tailwind, Framer Motion, and Lenis.
 
-Live: `npm run dev` → http://localhost:8080 (see `vite.config.ts`)
+Live: https://atul-portfolio-v3.vercel.app/
 
 ## Features
 
