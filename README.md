@@ -1,45 +1,60 @@
-# Atul Tameshwari - Developer Portfolio
+# atul.dev — Frontend Engineer Portfolio
 
-A modern, responsive developer portfolio built with React, TypeScript, and Tailwind CSS. This portfolio showcases my skills, projects, and professional experience in an elegant and interactive way.
+Personal portfolio of **Atul Tameshwari**, Software Development Engineer (Frontend) at Plane. Light-minimal, motion-rich, built with React, TypeScript, Tailwind, Framer Motion, and Lenis.
 
-## 🚀 Features
+Live: `npm run dev` → http://localhost:8080 (see `vite.config.ts`)
 
-- **Modern Design**: Clean, professional design with dark/light theme support
-- **Responsive**: Fully responsive design that works on all devices
-- **Interactive Sections**: 
-  - Hero section with animated introduction
-  - About section with personal information
-  - Experience section with work experience
-  - Skills section showcasing technical expertise
-  - Projects section with detailed case studies
-  - Contact section for professional inquiries
-- **Smooth Navigation**: Seamless scrolling and navigation experience
-- **Performance Optimized**: Built with Vite for fast development, instant HMR, and optimized production builds
+## Features
 
-## 🛠️ Technologies Used
+- **Hero** — parallax intro, magnetic CTAs, copy-email chip, stats, skills marquee
+- **About** — bio + Clean Code / UI-UX / Performance cards
+- **Experience** — timeline with current Plane role (Propel design system, @plane/blocks, community/core consolidation), inFeedo.ai history
+- **Work** — featured + secondary projects (HireTrack, ReviewUI, Notes Keep, Crescent UI)
+- **Stack** — Frontend / Styling / Toolbox groups
+- **Contact** — inverted CTA card with direct email + socials
+- **Command palette** — `⌘K` / `/` to jump sections, open projects, `ESC` to close
+- **Chrome** — floating nav with active section, scroll progress bar, single back-to-top FAB, grid + aurora background, dark/light themes with view transitions
 
-- **Frontend Framework**: React 18 with TypeScript
-- **Build Tool**: Vite
-- **Styling**: Tailwind CSS with shadcn/ui components
-- **Routing**: React Router DOM
-- **Icons**: Lucide React
-- **Theme**: Next-themes for dark/light mode
+## Stack
 
-## 📱 Responsive Design
+- React 18 + TypeScript + Vite
+- Tailwind CSS + shadcn/ui + Radix
+- Framer Motion (reveals, parallax), Lenis (smooth scroll), cmdk (palette)
+- Lucide icons, next-themes
 
-The portfolio is fully responsive and optimized for:
-- Desktop (1024px and above)
-- Tablet (768px - 1023px)
-- Mobile (320px - 767px)
+## Develop
 
-## 🤝 Contributing
+```sh
+npm install
+npm run dev
+npm run build
+npm run preview
+```
 
-While this is a personal portfolio, if you find any bugs or have suggestions for improvements, feel free to open an issue or submit a pull request.
+`npm run lint` currently fails on a pre-existing ESLint 9 / @typescript-eslint config mismatch, unrelated to app code. Build (`npm run build`) passes.
 
-## 📄 License
+## Structure
 
-This project is open source and available under the [MIT License](LICENSE).
+```
+src/
+  pages/Index.tsx            # Lenis + section composition
+  components/
+    navigation.tsx           # floating pill nav + palette trigger
+    command-palette.tsx      # ⌘K search
+    scroll-progress.tsx      # top progress bar
+    scroll-to-top.tsx        # single FAB
+    background.tsx           # grid + aurora
+    motion/reveal.tsx        # scroll reveal + section heading
+    motion/magnetic.tsx      # magnetic hover wrapper
+    sections/                # hero, about, experience, projects, skills, contact
+    theme-*.tsx              # dark/light provider + toggle
+  lib/constants.tsx          # nav, stats, skills, projects, experience content
+```
 
----
+## Content edits
 
-Built with ❤️ using React, TypeScript, and Tailwind CSS
+All copy lives in `src/lib/constants.tsx` — roles, bullets, tags, projects, skills, socials. Sections render from that file, so updating the resume = editing one file.
+
+## License
+
+MIT — feel free to fork for your own portfolio. If you spot a bug, open an issue.
