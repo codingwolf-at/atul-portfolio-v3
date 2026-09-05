@@ -1,5 +1,3 @@
-import { navItems } from "@/lib/constants";
-
 export function Footer() {
   const year = new Date().getFullYear();
   return (
@@ -11,13 +9,6 @@ export function Footer() {
             <span className="text-sm font-semibold tracking-tight">atul.dev</span>
             <span className="font-mono text-[11px] text-muted-foreground">© {year}</span>
           </a>
-          <nav className="flex flex-wrap justify-center gap-1" aria-label="Footer">
-            {navItems.map((n) => (
-              <a key={n.href} href={n.href} className="rounded-full px-3 py-1.5 text-sm text-muted-foreground hover:text-foreground hover:bg-accent transition-colors">
-                {n.name}
-              </a>
-            ))}
-          </nav>
           <div className="flex items-center gap-2.5">
             <span className="font-mono text-[11px] text-muted-foreground">Built with React · Tailwind</span>
           </div>
