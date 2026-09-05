@@ -69,7 +69,7 @@ export function Navigation() {
               aria-label="Open command palette"
             >
               <Command className="h-3.5 w-3.5" />
-              <span className="font-mono">⌘K</span>
+              <span className="font-mono">K</span>
             </button>
             <ThemeToggle />
             <Button variant="ghost" size="icon" className="md:hidden h-9 w-9" onClick={() => setOpen((v) => !v)} aria-label="Toggle menu">

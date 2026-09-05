@@ -2,7 +2,6 @@ import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion
 import { ArrowDown, ArrowUpRight, Copy, Check } from "lucide-react";
 import { useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Magnetic } from "@/components/motion/magnetic";
 import { marqueeSkills, stats } from "@/lib/constants";
 
 const ease = [0.21, 0.47, 0.32, 0.98] as const;
@@ -37,7 +36,6 @@ export function HeroSection() {
           <div className="inline-flex items-center gap-2 rounded-full border bg-card/80 px-3.5 py-1.5 text-xs text-muted-foreground shadow-sm backdrop-blur">
             <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
             Frontend Engineer · Plane · India
-            <span className="font-mono hidden sm:inline text-[11px]">⌘K</span>
           </div>
 
           <h1 className="mt-6 text-5xl sm:text-6xl lg:text-7xl font-semibold tracking-[-0.04em] leading-[0.95] text-balance">
@@ -52,19 +50,15 @@ export function HeroSection() {
           </p>
 
           <div className="mt-8 flex flex-wrap items-center gap-3">
-            <Magnetic>
-              <Button size="lg" className="rounded-full px-6 h-12 text-[15px]" asChild>
-                <a href="#projects">
-                  View work
-                  <ArrowUpRight className="ml-1.5 h-4 w-4" />
-                </a>
-              </Button>
-            </Magnetic>
-            <Magnetic>
-              <Button size="lg" variant="outline" className="rounded-full px-6 h-12 text-[15px] glass-card" asChild>
-                <a href="#contact">Get in touch</a>
-              </Button>
-            </Magnetic>
+            <Button size="lg" className="rounded-full px-6 h-12 text-[15px] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0 active:scale-[0.98]" asChild>
+              <a href="#projects">
+                View work
+                <ArrowUpRight className="ml-1.5 h-4 w-4" />
+              </a>
+            </Button>
+            <Button size="lg" variant="outline" className="rounded-full px-6 h-12 text-[15px] glass-card transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md active:translate-y-0 active:scale-[0.98]" asChild>
+              <a href="#contact">Get in touch</a>
+            </Button>
             <button
               onClick={copyEmail}
               className="inline-flex items-center gap-2 rounded-full border px-4 py-2.5 font-mono text-xs text-muted-foreground hover:text-foreground hover:bg-accent transition-colors"

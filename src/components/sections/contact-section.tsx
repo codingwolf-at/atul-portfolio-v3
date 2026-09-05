@@ -1,8 +1,6 @@
 import { ArrowUpRight } from "lucide-react";
 import { Reveal } from "@/components/motion/reveal";
-import { Magnetic } from "@/components/motion/magnetic";
 import { contactInfo } from "@/lib/constants";
-import { Button } from "@/components/ui/button";
 
 export function ContactSection() {
   return (
@@ -24,24 +22,25 @@ export function ContactSection() {
             <p className="relative mx-auto mt-5 max-w-xl text-[15px] sm:text-base leading-relaxed opacity-70">
               Open to frontend roles, freelance, and collaborations. Fast replies — usually within a day.
             </p>
-            <div className="relative mt-8 flex flex-wrap justify-center gap-3">
-              <Magnetic>
-                <Button size="lg" variant="secondary" className="rounded-full px-7 h-12" asChild>
-                  <a href="mailto:atameshwari9@gmail.com">
-                    atameshwari9@gmail.com
-                    <ArrowUpRight className="ml-1 h-4 w-4" />
-                  </a>
-                </Button>
-              </Magnetic>
-              <Magnetic>
-                <Button size="lg" variant="outline" className="rounded-full px-7 h-12 bg-transparent text-background border-background/25 hover:bg-background/10 hover:text-background" asChild>
-                  <a href="https://www.linkedin.com/in/atul-tameshwari/" target="_blank" rel="noreferrer">
-                    LinkedIn
-                  </a>
-                </Button>
-              </Magnetic>
+            <div className="relative mt-9 flex flex-wrap items-center justify-center gap-4">
+              <a
+                href="mailto:atameshwari9@gmail.com"
+                className="group inline-flex h-12 items-center gap-2 rounded-full bg-background px-7 text-[15px] font-medium text-foreground shadow-lg transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl active:translate-y-0 active:scale-[0.98]"
+              >
+                atameshwari9@gmail.com
+                <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/atul-tameshwari/"
+                target="_blank"
+                rel="noreferrer"
+                className="group inline-flex h-12 items-center gap-2 rounded-full border border-background/25 px-7 text-[15px] font-medium transition-all duration-300 hover:-translate-y-0.5 hover:bg-background/10 hover:border-background/40 active:translate-y-0 active:scale-[0.98]"
+              >
+                LinkedIn
+                <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </a>
             </div>
-            <div className="relative mt-8 flex justify-center gap-2.5 flex-wrap">
+            <div className="relative mt-9 flex justify-center gap-3 flex-wrap">
               {contactInfo.map((c) => (
                 <a
                   key={c.title}
@@ -49,7 +48,8 @@ export function ContactSection() {
                   target="_blank"
                   rel="noreferrer"
                   aria-label={c.title}
-                  className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-background/20 hover:bg-background/10 transition-colors"
+                  title={c.title}
+                  className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-background/20 transition-all duration-300 hover:-translate-y-1 hover:bg-background/10 hover:border-background/40 hover:shadow-lg active:translate-y-0 active:scale-95"
                 >
                   {c.icon}
                 </a>
