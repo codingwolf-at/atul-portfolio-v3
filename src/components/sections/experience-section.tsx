@@ -31,13 +31,11 @@ export function ExperienceSection() {
                       <h3 className="font-semibold tracking-tight text-lg">{job.title}</h3>
                       <p className="text-sm font-medium gradient-text">
                         {job.company}
-                        {"employment" in job && (job as { employment?: string }).employment
-                          ? ` · ${(job as { employment?: string }).employment}`
-                          : null}
+                        {job.employment ? ` · ${job.employment}` : null}
                       </p>
-                      {"location" in job && (job as { location?: string }).location ? (
+                      {job.location ? (
                         <p className="mt-0.5 font-mono text-[11px] text-muted-foreground">
-                          {(job as { location?: string }).location}
+                          {job.location}
                         </p>
                       ) : null}
                     </div>
@@ -45,9 +43,9 @@ export function ExperienceSection() {
                       {job.period}
                     </span>
                   </div>
-                  {"bullets" in job && Array.isArray((job as { bullets?: string[] }).bullets) ? (
+                  {job.bullets ? (
                     <ul className="mt-4 space-y-2.5">
-                      {(job as { bullets: string[] }).bullets.map((b) => (
+                      {job.bullets.map((b) => (
                         <li key={b.slice(0, 32)} className="flex gap-2.5 text-[15px] leading-relaxed text-muted-foreground">
                           <span aria-hidden className="mt-[9px] h-1 w-1 shrink-0 rounded-full bg-foreground/60" />
                           <span>{b}</span>
@@ -57,9 +55,9 @@ export function ExperienceSection() {
                   ) : (
                     <p className="mt-3 text-[15px] leading-relaxed text-muted-foreground">{job.description}</p>
                   )}
-                  {"tags" in job && Array.isArray((job as { tags?: string[] }).tags) ? (
+                  {job.tags ? (
                     <div className="mt-4 flex flex-wrap gap-2">
-                      {(job as { tags: string[] }).tags.map((t) => (
+                      {job.tags.map((t) => (
                         <span key={t} className="rounded-full bg-secondary px-2.5 py-1 text-xs font-medium text-secondary-foreground">
                           {t}
                         </span>
