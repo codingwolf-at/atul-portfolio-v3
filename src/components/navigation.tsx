@@ -12,14 +12,18 @@ export function Navigation() {
   const [active, setActive] = useState<string>("#hero");
 
   useEffect(() => {
+    const ids = ["#hero", ...navItems.map((n) => n.href)];
+    const elements = ids.map((id) => ({
+      id,
+      el: document.querySelector(id) as HTMLElement | null,
+    }));
+
     function onScroll() {
       setScrolled(window.scrollY > 24);
-      const ids = ["#hero", ...navItems.map((n) => n.href)];
       let current = "#hero";
-      for (const id of ids) {
-        const el = document.querySelector(id);
+      for (const { id, el } of elements) {
         if (!el) continue;
-        const rect = (el as HTMLElement).getBoundingClientRect();
+        const rect = el.getBoundingClientRect();
         if (rect.top <= 140) current = id;
       }
       setActive(current);
