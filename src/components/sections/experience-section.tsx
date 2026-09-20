@@ -12,7 +12,7 @@ export function ExperienceSection() {
             copy="Fast-moving SaaS, real users, real incidents. Owned UI end-to-end."
           />
           <Reveal delay={0.1}>
-            <a href="https://www.linkedin.com/in/atul-tameshwari/" target="_blank" rel="noreferrer"
+            <a href="https://www.linkedin.com/in/atul-tameshwari/" target="_blank" rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 rounded-full border px-4 py-2 text-sm font-medium hover:bg-accent transition-colors">
               LinkedIn →
             </a>
