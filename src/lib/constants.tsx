@@ -120,7 +120,18 @@ export const contactInfo = [
     }
 ];
 
-export const experience = [
+export type Experience = {
+  title: string;
+  company: string;
+  period: string;
+  location?: string;
+  employment?: string;
+  bullets?: string[];
+  tags?: string[];
+  description?: string;
+};
+
+export const experience: Experience[] = [
   {
     title: "Software Development Engineer — Frontend",
     company: "Plane",
