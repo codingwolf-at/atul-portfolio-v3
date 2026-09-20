@@ -33,7 +33,7 @@ export function ContactSection() {
               <a
                 href="https://www.linkedin.com/in/atul-tameshwari/"
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 className="group inline-flex h-12 items-center gap-2 rounded-full border border-background/25 px-7 text-[15px] font-medium transition-all duration-300 hover:-translate-y-0.5 hover:bg-background/10 hover:border-background/40 active:translate-y-0 active:scale-[0.98]"
               >
                 LinkedIn
@@ -46,7 +46,7 @@ export function ContactSection() {
                   key={c.title}
                   href={c.link}
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
                   aria-label={c.title}
                   title={c.title}
                   className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-background/20 transition-all duration-300 hover:-translate-y-1 hover:bg-background/10 hover:border-background/40 hover:shadow-lg active:translate-y-0 active:scale-95"
