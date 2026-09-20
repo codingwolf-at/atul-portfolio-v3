@@ -16,7 +16,7 @@ export function ProjectsSection() {
             copy="Production-grade builds. Real deploys, real users, real code you can read."
           />
           <Reveal delay={0.1}>
-            <a href="https://github.com/codingwolf-at" target="_blank" rel="noreferrer"
+            <a href="https://github.com/codingwolf-at" target="_blank" rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 rounded-full border px-4 py-2 text-sm font-medium hover:bg-accent transition-colors">
               All repos <ArrowUpRight className="h-4 w-4" />
             </a>
@@ -57,11 +57,11 @@ export function ProjectsSection() {
                     ))}
                   </div>
                   <div className="mt-6 flex gap-2.5">
-                    <a href={p.liveUrl} target="_blank" rel="noreferrer"
+                    <a href={p.liveUrl} target="_blank" rel="noopener noreferrer"
                       className="inline-flex flex-1 items-center justify-center gap-1.5 rounded-full bg-primary px-4 py-2.5 text-sm font-medium text-primary-foreground hover:opacity-90 transition-opacity">
                       Live <ArrowUpRight className="h-4 w-4" />
                     </a>
-                    <a href={p.githubUrl} target="_blank" rel="noreferrer"
+                    <a href={p.githubUrl} target="_blank" rel="noopener noreferrer"
                       className="inline-flex flex-1 items-center justify-center gap-1.5 rounded-full border px-4 py-2.5 text-sm font-medium hover:bg-accent transition-colors">
                       Code
                     </a>
@@ -86,10 +86,10 @@ export function ProjectsSection() {
                   ))}
                 </div>
                 <div className="mt-5 flex gap-4 text-sm font-medium">
-                  <a href={p.liveUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 hover:underline underline-offset-4">
+                  <a href={p.liveUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 hover:underline underline-offset-4">
                     Demo <ArrowUpRight className="h-3.5 w-3.5" />
                   </a>
-                  <a href={p.githubUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 text-muted-foreground hover:text-foreground">
+                  <a href={p.githubUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-muted-foreground hover:text-foreground">
                     Code <ArrowUpRight className="h-3.5 w-3.5" />
                   </a>
                 </div>
