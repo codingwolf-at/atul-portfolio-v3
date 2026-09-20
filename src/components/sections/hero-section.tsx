@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { marqueeSkills, stats } from "@/lib/constants";
 
 const ease = [0.21, 0.47, 0.32, 0.98] as const;
+const duplicatedMarqueeSkills = [...marqueeSkills, ...marqueeSkills];
 
 export function HeroSection() {
   const reduce = useReducedMotion();
@@ -87,7 +88,7 @@ export function HeroSection() {
       <div className="mt-14 border-y bg-card/40 backdrop-blur">
         <div className="overflow-hidden mask-fade-x py-3.5">
           <div className="flex w-max gap-8 animate-marquee pr-8">
-            {[...marqueeSkills, ...marqueeSkills].map((s, i) => (
+            {duplicatedMarqueeSkills.map((s, i) => (
               <span key={i} className="flex items-center gap-8 whitespace-nowrap font-mono text-xs uppercase tracking-[0.18em] text-muted-foreground">
                 {s}
                 <span className="h-1 w-1 rounded-full bg-foreground/30" />
