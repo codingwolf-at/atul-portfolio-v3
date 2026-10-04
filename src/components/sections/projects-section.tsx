@@ -2,10 +2,10 @@ import { ArrowUpRight } from "lucide-react";
 import { Reveal, SectionHeading } from "@/components/motion/reveal";
 import { projects } from "@/lib/constants";
 
-export function ProjectsSection() {
-  const featured = projects.filter((p) => p.featured);
-  const rest = projects.filter((p) => !p.featured);
+const featured = projects.filter((p) => p.featured);
+const rest = projects.filter((p) => !p.featured);
 
+export function ProjectsSection() {
   return (
     <section id="projects" className="py-20 sm:py-28 scroll-mt-20 border-t">
       <div className="container-custom">
