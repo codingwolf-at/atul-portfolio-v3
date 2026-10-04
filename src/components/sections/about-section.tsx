@@ -1,3 +1,4 @@
+import { HighlightCard } from "@/components/cards/highlight-card";
 import { Reveal, SectionHeading } from "@/components/motion/reveal";
 import { highlights } from "@/lib/constants";
 
@@ -41,13 +42,7 @@ export function AboutSection() {
         <div className="mt-12 grid sm:grid-cols-3 gap-4">
           {highlights.map((h, i) => (
             <Reveal key={h.title} delay={i * 0.08}>
-              <div className="group h-full rounded-2xl border bg-card p-6 card-hover">
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl border bg-accent">
-                  <h.icon className="h-5 w-5" />
-                </div>
-                <h3 className="mt-4 font-semibold tracking-tight">{h.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{h.description}</p>
-              </div>
+              <HighlightCard highlight={h} />
             </Reveal>
           ))}
         </div>
